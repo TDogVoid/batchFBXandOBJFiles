@@ -23,7 +23,7 @@ for object in bpy.context.selected_objects:
     fPath = str((fbxPath + object.name + '.fbx'))
     oPath = str((objPath + object.name + '.obj'))
 
-    #bpy.context.active_object = object
+    # export FBX
     bpy.ops.export_scene.fbx(filepath=fPath,
                             check_existing=True, 
                             filter_glob="*.fbx", 
@@ -37,6 +37,7 @@ for object in bpy.context.selected_objects:
                             bake_space_transform=True,
                             use_mesh_modifiers=True)
     
+    # export OBJ
     bpy.ops.export_scene.obj(filepath=oPath, 
                             check_existing=True, 
                             axis_forward='-Z', 
